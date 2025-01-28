@@ -1,48 +1,87 @@
-// import React from "react";
-// import videoBg from "../assets/videoBg3.mp4"; // Ensure the file extension is correct
-// import "./home.css"; // Correct import path
-// import image from "../assets/background.png";
+
+// import React, { useState } from "react";
+// import videoBg from "../assets/videoBg4.mp4";
+// import "./home.css";
+// import Navbar from "../components/Navbar/Navbar";
+// import Login from "../components/Login/Login";
+// // import Signup from "../components/Signup/Signup";
+// import Signup from "./SignUp/Signup";
 
 // const Home = () => {
+//   const [view, setView] = useState(null); // Manage which component to display
+
 //   return (
-//     <div className="main">
-//       <div className="overlay"></div>
-//       <video src={videoBg} autoPlay loop muted />
-//       <div className="content">
-//         <h1>Welcome</h1>
-//         <p>To TeamSphere.</p>
+//     <>
+//       <Navbar setView={setView} /> {/* Pass setView as a prop */}
+//       <div className="main">
+//         <div className="video-section">
+//           <div className="overlay"></div>
+//           <video src={videoBg} autoPlay loop muted />
+//           <div className="content">
+//             <h1>Welcome</h1>
+//             <p>To TeamSphere.</p>
+//           </div>
+//         </div>
+
+//         {/* Conditional Rendering for Login or Signup */}
+//         {view === "login" && (
+//           <div className="dashboard">
+//             <Login closeLogin={() => setView(null)} /> {/* Pass closeLogin */}
+//           </div>
+//         )}
+//         {view === "signup" && (
+//           <div className="dashboard">
+//             <Signup closeSignup={() => setView(null)} /> {/* Pass closeSignup */}
+//           </div>
+//         )}
 //       </div>
-
-//       <div className="overlay2">
-//         <image src="background.png"/>
-//       </div>
-//     </div>
-
-       
-
+//     </>
 //   );
 // };
 
 // export default Home;
-
-import React from "react";
+import React, { useState } from "react";
 import videoBg from "../assets/videoBg4.mp4";
 import "./home.css";
+import Navbar from "../components/Navbar/Navbar";
+import Login from "../components/Login/Login";
+import Signup from "./SignUp/Signup";
 
 const Home = () => {
-  return (
-    <div className="main">
-      {/* Video Section */}
-      <div className="video-section">
-        <div className="overlay"></div>
-        <video src={videoBg} autoPlay loop muted />
-        <div className="content">
-          <h1>Welcome</h1>
-          <p>To TeamSphere.</p>
-        </div>
-      </div>
+  const [view, setView] = useState(null); // Manage which component to display
 
-    </div>
+  return (
+    <>
+      <Navbar setView={setView} /> {/* Pass setView as a prop */}
+      <div className="main">
+        <div className="video-section">
+          <div className="overlay"></div>
+          <video src={videoBg} autoPlay loop muted />
+          <div className="content">
+            <h1>Welcome</h1>
+            <p>To TeamSphere.</p>
+          </div>
+        </div>
+
+        {/* Conditional Rendering for Login or Signup */}
+        {view === "login" && (
+          <div className="dashboard">
+            <Login 
+            closeLogin={() => setView(null)} 
+            openSignup={() => setView("signup")}
+            /> {/* Pass closeLogin */}
+          </div>
+        )}
+        {view === "signup" && (
+          <div className="dashboard">
+            <Signup
+              closeSignup={() => setView(null)} // Close Signup
+              openLogin={() => setView("login")} // Open Login
+            />
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
