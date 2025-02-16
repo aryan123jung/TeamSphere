@@ -1,50 +1,69 @@
-// // Navbar.js
-// import React, { useState } from "react";
-// import { Link,Navigate } from "react-router-dom"; // Import Link
+
+// import React from "react";
 // import "../Navbar/navbar.css";
+// import PlayersPage from "../PlayersPage/PlayersPage";
 
-// const Navbar = () => {
-//   const [activePage, setActivePage] = useState(""); // State for active button
-
-//   const handleNavigation = (page) => {
-//     setActivePage(page);
-//     console.log(`Navigated to ${page}`);
-//   };
-
+// const Navbar = ({ setView }) => {
 //   return (
 //     <header className="header">
 //       <div className="navbar-logo">
 //         <img src="../src/assets/logo1.png" alt="logo" />
 //       </div>
-//       <Link
-//         to="/login"
+
+//       <button
 //         id="login-button"
-//         className={activePage === "Login" ? "active" : ""}
-//         onClick={() => handleNavigation("Login")}
+//         onClick={() => setView("login")}
+//         className="navbar-btn"
 //       >
 //         Login
-//       </Link>
-//       <Link
-//         to="/signup"
+//       </button>
+
+//       <button
 //         id="SignUp-button"
-//         className={activePage === "SignUp" ? "active" : ""}
-//         onClick={() => handleNavigation("SignUp")}
+//         onClick={() => setView("signup")}
+//         className="navbar-btn"
 //       >
 //         Sign-Up
-//       </Link>
-//       <Link
-//         to="/" // Link to the Home page
+//       </button>
+
+//       <button
 //         id="Home-button"
-//         className={activePage === "Home" ? "active" : ""}
-//         onClick={() => handleNavigation("Home")}
+//         onClick={() => setView(null)}
+//         className="navbar-btn"
 //       >
 //         Home
-//       </Link>
+//       </button>
+
+//       <button
+//         id="AboutUs-button"
+//         onClick={() => setView("PlayersPage")}
+//         className="navbar-btn"
+//       >
+//         About Us
+//       </button>
+
+//       <button
+//         id="AddPlayer-button"
+//         onClick={() => setView(null)}
+//         className="navbar-btn"
+//       >
+//         Add Player
+//       </button>
+
+//       <button
+//         id="Players-button"
+//         onClick={() => setView(null)}
+//         className="navbar-btn"
+//       >
+//         Players
+//       </button>
+      
 //     </header>
 //   );
 // };
 
 // export default Navbar;
+
 import React from "react";
 import "../Navbar/navbar.css";
 
@@ -55,14 +74,43 @@ const Navbar = ({ setView }) => {
         <img src="../src/assets/logo1.png" alt="logo" />
       </div>
 
+      {/* Players Button */}
       <button
-        id="login-button"
-        onClick={() => setView("login")}
+        id="Players-button"
+        onClick={() => setView("players")}
         className="navbar-btn"
       >
-        Login
+        Players
       </button>
 
+      {/* Add Player Button */}
+      <button
+        id="AddPlayer-button"
+        onClick={() => setView("addPlayer")}
+        className="navbar-btn"
+      >
+        Add Player
+      </button>
+
+      {/* About Us Button */}
+      <button
+        id="AboutUs-button"
+        onClick={() => setView("aboutUs")}
+        className="navbar-btn"
+      >
+        About Us
+      </button>
+
+      {/* Home Button */}
+      <button
+        id="Home-button"
+        onClick={() => setView(null)}
+        className="navbar-btn"
+      >
+        Home
+      </button>
+
+      {/* Sign-Up Button */}
       <button
         id="SignUp-button"
         onClick={() => setView("signup")}
@@ -71,14 +119,14 @@ const Navbar = ({ setView }) => {
         Sign-Up
       </button>
 
+      {/* Login Button */}
       <button
-        id="Home-button"
-        onClick={() => setView(null)}
+        id="login-button"
+        onClick={() => setView("login")}
         className="navbar-btn"
       >
-        Home
+        Login
       </button>
-      
     </header>
   );
 };

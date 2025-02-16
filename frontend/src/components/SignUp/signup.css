@@ -137,6 +137,6 @@
     transition: color 0.3s ease;
   }
   
-  .close-btn:hover {
+  .close-btn :hover {
     color: red;
   }

@@ -1,0 +1,127 @@
+/* 📌 ActiveSlider Component - The main slider container */
+.active-slider {
+    display: flex; /* Centers items horizontally */
+    align-items: center; /* Aligns items vertically */
+    justify-content: center; /* Centers content */
+    flex-direction: column; /* Stacks items vertically */
+    height: 900px; /* Sets slider height */
+    /* background-color: #6c34af; Background color of the slider */
+    backdrop-filter: blur(20px);
+
+}
+
+/* 📌 Swiper Component - Controls the main swiper size */
+.swiper-container {
+    max-width: 90%; /* Limits slider width */
+}
+
+/* 📌 Swiper Component - Adjusts width for large screens (1024px and above) */
+@media (min-width: 1024px) {
+    .swiper-container {
+        max-width: 80%;
+    }
+}
+
+/* 📌 SwiperSlide Component - Each individual slide container */
+.slide-container {
+    display: flex; /* Enables flexible layout */
+    flex-direction: column; /* Stacks elements inside the slide */
+    gap: 24px; /* Space between elements */
+    margin-bottom: 80px; /* Adds spacing below each slide */
+    position: relative; /* Positions elements inside properly */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
+    color: white; /* Sets text color */
+    border-radius: 12px; /* Rounds the slide corners */
+    padding: 24px; /* Adds padding inside the slide */
+    height: 250px; /* Default height of slides */
+    width: 215px; /* Default width of slides */
+    overflow: hidden; /* Prevents content from overflowing */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* 📌 SwiperSlide Component - Adjusts slide size for larger screens */
+@media (min-width: 1024px) {
+    .slide-container {
+        height: 400px; /* Increases height on large screens */
+        width: 350px; /* Increases width on large screens */
+    }
+}
+
+/* 📌 SwiperSlide Background - Adds background image */
+.slide-bg {
+    position: absolute; /* Positions background absolutely inside the slide */
+    inset: 0; /* Ensures the background covers the entire slide */
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center; /* Centers the background image */
+}
+
+/* 📌 SwiperSlide Background Overlay - Adds dark overlay effect */
+.overlay {
+    position: absolute; /* Covers the entire slide */
+    inset: 0; /* Ensures overlay covers all corners */
+    background-color: black; /* Sets overlay color */
+    opacity: 0.1; /* Initial transparency */
+    transition: opacity 0.3s ease; /* Smooth transition on hover */
+}
+
+/* 📌 SwiperSlide Background Overlay - Increases overlay visibility on hover */
+.slide-container:hover .overlay {
+    opacity: 0.5; /* Darkens overlay on hover */
+}
+
+/* 📌 SwiperSlide Content - Holds the text and icon inside slides */
+.slide-content {
+    position: relative; /* Ensures content stays above overlay */
+    display: flex; /* Enables flexible content layout */
+    flex-direction: column; /* Stacks text and icon vertically */
+    gap: 12px; /* Adds spacing between elements */
+}
+
+/* 📌 SwiperSlide Icon - Controls the icon style */
+.slide-icon {
+    margin-bottom: 10px; /* Moves the text inside the photo */
+    color: #2563eb; /* Default icon color */
+    width: 32px; /* Icon width */
+    height: 32px; /* Icon height */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* 📌 SwiperSlide Icon - Changes icon color on hover */
+.slide-container:hover .slide-icon {
+    color: #3b82f6; /* Changes icon color on hover */
+}
+
+/* 📌 SwiperSlide Title - Controls the title text */
+.slide-title {
+    font-size: 1.25rem; /* Default font size */
+    margin-bottom: 10px; /* Moves text paragraph */
+}
+
+/* 📌 SwiperSlide Title - Adjusts title size for larger screens */
+@media (min-width: 1024px) {
+    .slide-title {
+        font-size: 1.5rem; /* Increases title font size */
+    }
+}
+
+/* 📌 SwiperSlide Text - Controls paragraph styling */
+.slide-text {
+    font-size: 1rem; /* Default text size */
+}
+
+/* 📌 SwiperSlide Arrow Icon - Controls the arrow at the bottom-left */
+.arrow-icon {
+    position: absolute; /* Places icon inside the slide */
+    bottom: 20px; /* Positions icon from bottom */
+    left: 20px; /* Positions icon from left */
+    width: 35px; /* Sets arrow size */
+    height: 35px; /* Sets arrow size */
+    color: white; /* Default arrow color */
+    transition: transform 0.2s ease, color 0.2s ease; /* Smooth hover effects */
+}
+
+/* 📌 SwiperSlide Arrow Icon - Rotates and changes color on hover */
+.slide-container:hover .arrow-icon {
+    color: #3b82f6; /* Changes arrow color */
+    transform: rotate(45deg); /* Rotates arrow on hover */
+}
