@@ -1,199 +1,226 @@
+// // import React, { useState } from "react";
+// // // import { Chart } from "chart.js";
+// // // import "./addPlayer.css"; 
+// // import "./addPlayer.css";
+// // import { ImCross } from "react-icons/im";
 
 
-// const AddPlayer = () => {
-//   const [formData, setFormData] = useState({
-//     id: "",
-//     name: "",
-//     age: "",
-//     nationality: "Australian",
-//     category: "Batsman",
-//     photo: null,
-//     skills: {
-//       batting: 50,
-//       bowling: 50,
-//       fielding: 50,
-//       fitness: 50,
-//       matchAwareness: 50,
-//     },
-//   });
+// // const Addplayer = ({closeaddPlayer}) => {
+// //   return (
+// //     <>
+// //     <div className="add-player_container">
+// //        <button className="close-btn" onClick={closeaddPlayer}>
+// //           <ImCross />
+// //           </button>
 
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData({ ...formData, [name]: value });
-//   };
+// //           <h1>Players Details</h1>
+// //           <h2>Players Stats</h2>
 
-//   const handleSkillChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData({
-//       ...formData,
-//       skills: { ...formData.skills, [name]: parseInt(value) },
-//     });
-//   };
+// //           <div className="form">
+// //           <form action="">
+// //           <h3>Add Player</h3>
+// //           <div className="input-box">
+// //             <label>Email</label>
+// //             <input
+// //               type="email"
+// //               placeholder="Enter your email"
+// //               required
+// //             />
+            
+// //           </div>
 
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const response = await fetch("/api/players", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(formData),
-//       });
-//       if (response.ok) {
-//         alert("Player added successfully!");
-//         setFormData({
-//           id: "",
-//           name: "",
-//           age: "",
-//           nationality: "Australian",
-//           category: "Batsman",
-//           photo: null,
-//           skills: {
-//             batting: 50,
-//             bowling: 50,
-//             fielding: 50,
-//             fitness: 50,
-//             matchAwareness: 50,
-//           },
-//         });
-//       } else {
-//         alert("Failed to add player.");
-//       }
-//     } catch (error) {
-//       console.error("Error adding player:", error);
-//     }
-//   };
+// //           <div className="input-box">
+// //             <label>Password</label>
+// //             <input
+// //               type="password"
+// //               placeholder="Enter your password"
+// //               required
+// //             />
+// //           </div>
 
-//   // Render spider chart preview
-//   useEffect(() => {
-//     const ctx = document.getElementById("skillChart").getContext("2d");
-//     const chart = new Chart(ctx, {
-//       type: "radar",
-//       data: {
-//         labels: ["Batting", "Bowling", "Fielding", "Fitness", "Match Awareness"],
-//         datasets: [
-//           {
-//             label: "Skills",
-//             data: [
-//               formData.skills.batting,
-//               formData.skills.bowling,
-//               formData.skills.fielding,
-//               formData.skills.fitness,
-//               formData.skills.matchAwareness,
-//             ],
-//             backgroundColor: "rgba(127, 255, 0, 0.2)",
-//             borderColor: "#7FFF00",
-//             borderWidth: 2,
-//           },
-//         ],
-//       },
-//       options: {
-//         scale: {
-//           ticks: {
-//             beginAtZero: true,
-//             max: 100,
-//           },
-//         },
-//       },
-//     });
+          
 
-//     return () => chart.destroy(); // Cleanup chart on unmount
-//   }, [formData.skills]);
+// //           <button className="login-button">Login</button>
 
+          
+// //         </form>
+// //         </div>
+// //     </div>
+// //     </>
+// //   )
+// // }
+// // export default Addplayer
+
+// import React, { useState } from "react";
+// import "./addPlayer.css";
+// import { ImCross } from "react-icons/im";
+
+// const Addplayer = ({ closeaddPlayer }) => {
 //   return (
-//     <div className="add-player-page">
-//       <h1>Add Player</h1>
-//       <form onSubmit={handleSubmit} className="add-player-form">
-//         <label>
-//           ID:
-//           <input type="text" name="id" value={formData.id} onChange={handleChange} required />
-//         </label>
+//     <>
+//       <div className="add-player_container">
+//         <button className="close-btn" onClick={closeaddPlayer}>
+//           <ImCross />
+//         </button>
 
-//         <label>
-//           Name:
-//           <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-//         </label>
+//         <h1>Player Details</h1>
 
-//         <label>
-//           Age:
-//           <input type="number" name="age" value={formData.age} onChange={handleChange} required />
-//         </label>
+//         <div className="form">
+//           <form action="">
+//             <h3>Personal Details</h3>
 
-//         <label>
-//           Nationality:
-//           <select name="nationality" value={formData.nationality} onChange={handleChange}>
-//             <option value="Australian">Australian</option>
-//             <option value="English">English</option>
-//             <option value="Indian">Indian</option>
-//           </select>
-//         </label>
+//             <div className="input-box">
+//               <label>Photo</label>
+//               <input type="file" accept="image/*" required />
+//             </div>
 
-//         <label>
-//           Category:
-//           <select name="category" value={formData.category} onChange={handleChange}>
-//             <option value="Batsman">Batsman</option>
-//             <option value="Bowler">Bowler</option>
-//             <option value="All-rounder">All-rounder</option>
-//           </select>
-//         </label>
+//             <div className="input-box">
+//               <label>Player Name</label>
+//               <input type="text" placeholder="Enter player name" required />
+//             </div>
 
-//         <label>
-//           Photo:
-//           <input type="file" name="photo" onChange={(e) => setFormData({ ...formData, photo: e.target.files[0] })} />
-//         </label>
+//             <div className="input-box">
+//               <label>Player ID</label>
+//               <input type="text" placeholder="Enter player ID" required />
+//             </div>
 
-//         <h3>Skills</h3>
-//         {Object.keys(formData.skills).map((skill) => (
-//           <label key={skill}>
-//             {skill.charAt(0).toUpperCase() + skill.slice(1)}:
-//             <input
-//               type="range"
-//               name={skill}
-//               value={formData.skills[skill]}
-//               min="0"
-//               max="100"
-//               onChange={handleSkillChange}
-//             />
-//             <span>{formData.skills[skill]}</span>
-//           </label>
-//         ))}
+//             <div className="input-box">
+//               <label>Age</label>
+//               <input type="number" placeholder="Enter age" required />
+//             </div>
 
-//         <div className="spider-chart-preview">
-//           <canvas id="skillChart"></canvas>
+//             <div className="input-box">
+//               <label>Nationality</label>
+//               <input type="text" placeholder="Enter nationality" required />
+//             </div>
+
+//             <div className="input-box">
+//               <label>Category</label>
+//               <input type="text" placeholder="Enter category" required />
+//             </div>
+//             </form>
+
+
+//             <form className="players_stats">
+//             <h3>Player Stats</h3>
+
+//             <div className="input-box">
+//               <label>Batting</label>
+//               <input type="number" placeholder="Rate batting (1-100)" required />
+//             </div>
+
+//             <div className="input-box">
+//               <label>Bowling</label>
+//               <input type="number" placeholder="Rate bowling (1-100)" required />
+//             </div>
+
+//             <div className="input-box">
+//               <label>Fitness</label>
+//               <input type="number" placeholder="Rate fitness (1-100)" required />
+//             </div>
+
+//             <div className="input-box">
+//               <label>Fielding</label>
+//               <input type="number" placeholder="Rate fielding (1-100)" required />
+//             </div>
+
+//             <div className="input-box">
+//               <label>Match Awareness</label>
+//               <input type="number" placeholder="Rate match awareness (1-100)" required />
+//             </div>
+
+//             <button className="submit-button">Add Player</button>
+//             </form>
 //         </div>
-
-//         <button type="submit">Add Player</button>
-//       </form>
-//     </div>
+//       </div>
+//     </>
 //   );
 // };
 
-// export default AddPlayer;
-import React, { useState } from "react";
-// import { Chart } from "chart.js";
-import "./addPlayer.css"; 
+// export default Addplayer;
+import React from "react";
+import "./addPlayer.css";
+import { ImCross } from "react-icons/im";
 
-
-const Addplayer = () => {
-  const [addPlayer, setPlayers] = useState([]);
+const Addplayer = ({ closeaddPlayer }) => {
   return (
-    <div className='add-container'>
-      <h1 className="topic">Addplayer</h1>
+    <>
+      <div className="add-player_container">
+        <button className="close-btn" onClick={closeaddPlayer}>
+          <ImCross />
+        </button>
 
-      <div className='input-box'>
-        <form action=''>
-          <div className='id'>
-            <label className='PlayerName'>Name</label>
+        <h1>Add Player</h1>
 
-          </div>
-          <div>
-            <input type='image'></input>
-          </div>
-        </form>
+        <div className="form">
+          <form action="">
+            <h3>Personal Details</h3>
+
+            <div className="photo">
+              <label>Photo</label>
+              <input type="file" accept="image/*" required />
+            </div>
+
+            <div className="player-name">
+              <label>Player Name</label>
+              <input type="text" placeholder="Enter player name" required />
+            </div>
+
+            <div className="player-id">
+              <label>Player ID</label>
+              <input type="text" placeholder="Enter player ID" required />
+            </div>
+
+            <div className="age">
+              <label>Age</label>
+              <input type="number" placeholder="Enter age" required />
+            </div>
+
+            <div className="nationality">
+              <label>Nationality</label>
+              <input type="text" placeholder="Enter nationality" required />
+            </div>
+
+            <div className="category">
+              <label>Category</label>
+              <input type="text" placeholder="Enter category" required />
+            </div>
+          </form>
+
+          <form className="players_stats">
+            <h3>Player Stats</h3>
+
+            <div className="batting">
+              <label>Batting</label>
+              <input type="number" placeholder="Rate batting (1-100)" required />
+            </div>
+
+            <div className="bowling">
+              <label>Bowling</label>
+              <input type="number" placeholder="Rate bowling (1-100)" required />
+            </div>
+
+            <div className="fitness">
+              <label>Fitness</label>
+              <input type="number" placeholder="Rate fitness (1-100)" required />
+            </div>
+
+            <div className="fielding">
+              <label>Fielding</label>
+              <input type="number" placeholder="Rate fielding (1-100)" required />
+            </div>
+
+            <div className="match-awareness">
+              <label>Match Awareness</label>
+              <input type="number" placeholder="Rate match awareness (1-100)" required />
+            </div>
+
+            <button className="submit-button">Add Player</button>
+          </form>
+        </div>
       </div>
-      </div>
-  )
-}
+    </>
+  );
+};
 
-export default Addplayer
+export default Addplayer;

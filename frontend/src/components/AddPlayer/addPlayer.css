@@ -1,44 +1,373 @@
-.add-player-page {
+
+  /* .add-player_container{
+    position: absolute;
+    top: -100px;
+    left: 188px;
+    transform: translateX(-50%);
+    width: 1350px; /* Ensures content fits well */
+    /* max-width: 1000px; */
+    /* height: 600px;
+    margin: 50px;
+    padding: 0;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: aliceblue;
+    text-align: center; */
+
+  /* }  */
+  .add-player_container {
+    position: absolute;
+    top: -100px;
+    left: 188px;
+    transform: translateX(-50%);
+    width: 1350px;
+    height: 600px;
+    margin: 50px;
     padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .add-player-form {
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: aliceblue;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-  }
-  
-  .add-player-form label {
-    font-weight: bold;
-  }
-  
-  .add-player-form input[type="text"],
-  .add-player-form input[type="number"],
-  .add-player-form select {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: aliceblue;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form {
+    margin-top: 25px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 1300px;
+    /* max-width: 1200px; */
+    /* background: rgba(255, 255, 255, 0.1); */
+    color: aliceblue;
+    backdrop-filter: blur(2 0px);
+    padding: 10px 5px;
+    border-radius: 10px;
+    height: auto;
+    gap: 10px;
+}
+
+form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.players_stats {
+    width: 50%;
+}
+
+.photo {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.photo label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.photo input {
+    width: 600px;
     padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .add-player-form input[type="range"] {
-    width: 100%;
-  }
-  
-  .spider-chart-preview {
-    margin-top: 20px;
-    height: 200px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #7fff00;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+}
+
+.player-name {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.player-name label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.player-name input {
+    /* width: 100%;
+    padding: 8px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; */
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+}
+
+.player-id {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.player-id label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.player-id input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; */
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+}
+
+.age {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.age label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.age input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; */
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+}
+
+.nationality {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.nationality label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.nationality input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; */
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+}
+
+.category {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.category label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.category input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; */
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+}
+
+.batting {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.batting label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.batting input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; */
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+}
+
+.bowling {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.bowling label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.bowling input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; */
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+}
+
+.fitness {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.fitness label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.fitness input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; */
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+}
+
+.fielding {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.fielding label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.fielding input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; */
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+}
+
+.match-awareness {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.match-awareness label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.match-awareness input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; */
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+}
+
+.submit-button {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    background: #4CAF50;
+    color: white;
     font-size: 16px;
-  }
-  
-  button:hover {
-    background-color: #6de600;
-  }
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 280px;
+}
+
+.submit-button:hover {
+    background: #45a049;
+}
