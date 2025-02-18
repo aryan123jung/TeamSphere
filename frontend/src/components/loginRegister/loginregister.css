@@ -1,0 +1,249 @@
+/* Basic Styling for Auth Container */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+   background: #0c0c0c; /*Darker background */
+  /* background-image: url('frontend\src\assets\Default_ground_img.jpg');  */
+  color: white;
+}
+
+/* Box Container */
+.auth-box {
+  /* backdrop-filter: blur(20px);
+  background-color: transparent; */
+  background: rgba(0, 0, 0, 0.6); /*Dark overlay */
+  display: flex;
+  position: relative;
+  width: 600px;
+  max-width: 100%;
+  height: 450px;
+  background: #1a1a1a; /* Slightly lighter dark for the box */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 123, 123, 0.7); /* Glowing effect */
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Label Styling */
+.auth-label {
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #ddd; /* Light color for labels */
+  text-align: left; /* Align to the left */
+  letter-spacing: 0.5px;
+  border: 0;
+  border-radius: 40px;
+}
+
+.auth-label1 {
+  width: 100%;
+  margin-bottom: 0px;
+  font-size: 14px;
+  color: #ddd; /* Light color for labels */
+  text-align: left; /* Align to the left */
+  letter-spacing: 0.5px;
+  border: 0;
+  border-radius: 40px;
+}
+
+
+/* Form Input Fields Styling */
+.auth-input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+  outline: none;
+  background: #333;
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.auth-input:focus {
+  border-color: #f76c6c;
+  box-shadow: 0 0 10px rgba(247, 108, 108, 0.8);
+}
+
+
+/* Login and Signup Form Sides */
+.form-side {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0%;
+  transform: translateX(-50%); /* Center the forms inside the box */
+  opacity: 0; /* Hide the form by default */
+  visibility: hidden; /* Hide the form by default */
+  transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out, visibility 0s 0.5s; /* Delay visibility change */
+}
+
+/* Login specific styling */
+.log-in {
+  transform: translateX(0); /* No movement for the login form */
+}
+
+/* Signup specific styling */
+.sign-up {
+  transform: translateX(100%); /* Start off-screen for sign-up form */
+}
+
+/* Slide-in and slide-out animations */
+.slide-in {
+  opacity: 1;
+  visibility: visible; /* Make the form visible */
+  transform: translateX(0); /* Slide in */
+}
+
+.slide-out {
+  opacity: 0;
+  visibility: hidden; /* Hide the form */
+  transform: translateX(100%); /* Slide out */
+}
+
+
+/* Form Title */
+.form-titleLOGIN {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.form-titleSIGNUP {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+/* Input Fields Styling */
+.auth-input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+  outline: none;
+  background: #333;
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.auth-input:focus {
+  border-color: #f76c6c;
+  box-shadow: 0 0 10px rgba(247, 108, 108, 0.8);
+}
+
+/* Buttons Styling */
+.auth-btn {
+  width: 30%;
+  margin-top: 30px;
+  padding: 12px;
+  background: linear-gradient(45deg, #ff4081, #ff9800);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+}
+
+.auth-btn:hover {
+  background: linear-gradient(45deg, #ff9800, #ff4081);
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.9);
+}
+
+.auth-btn1 {
+  width: 30%;
+  margin-top: 20px;
+  padding: 12px;
+  background: linear-gradient(45deg, #ff4081, #ff9800);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+}
+
+.auth-btn1:hover {
+  background: linear-gradient(45deg, #ff9800, #ff4081);
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.9);
+}
+
+/* Alreadyhave acc or dont have */
+.toggle-form {
+  margin-top: 20px;
+  margin-left: 350px;
+  color: #4c8bf5;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.toggle-form:hover {
+  color: #ff4081;
+}
+
+
+.toggle-formSIGNUP{
+  margin-top: 10px;
+  margin-left: 350px;
+  color: #4c8bf5;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.toggle-formSIGNUP:hover {
+  color: #ff4081;
+}
+
+
+
+/* Glowing Effect for the Entire Form */
+.auth-box {
+  animation: glowing-box 1.5s infinite alternate;
+}
+
+
+
+
+
+
+
+
+
+/* Keyframes for glowing box */
+@keyframes glowing-box {
+  0% {
+    box-shadow: 0 0 5px rgb(255, 123, 123), 0 0 20px rgb(255, 123, 123), 0 0 30px rgb(255, 123, 123);
+  }
+  25% {
+    box-shadow: 0 0 5px rgb(255, 204, 0), 0 0 20px rgb(255, 204, 0), 0 0 30px rgb(255, 204, 0);
+  }
+  50% {
+    box-shadow: 0 0 5px rgb(0, 255, 255), 0 0 20px rgb(0, 255, 255), 0 0 30px rgb(0, 255, 255);
+  }
+  75% {
+    box-shadow: 0 0 5px rgb(0, 204, 255), 0 0 20px rgb(0, 204, 255), 0 0 30px rgb(0, 204, 255);
+  }
+  100% {
+    box-shadow: 0 0 5px rgb(76, 139, 245), 0 0 20px rgb(76, 139, 245), 0 0 30px rgb(76, 139, 245);
+  }
+}

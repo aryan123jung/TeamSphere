@@ -6,6 +6,8 @@ import Signup from "./components/SignUp/Signup";
 import Login from "./components/Login/Login";
 import Addplayer from "./components/AddPlayer/Addplayer";
 import Players from "./components/PlayersPage/Players";
+import loginRegister from "./components/loginRegister/LoginRegister";
+import LoginRegister from "./components/loginRegister/LoginRegister";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path="/addPlayer" element={<Addplayer />} />
       </Routes>
     </Router>
+    // <LoginRegister/>
    
   );
 }

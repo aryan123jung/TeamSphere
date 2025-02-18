@@ -111,22 +111,22 @@ const Navbar = ({ setView }) => {
       </button>
 
       {/* Sign-Up Button */}
-      <button
+      {/* <button
         id="SignUp-button"
         onClick={() => setView("signup")}
         className="navbar-btn"
       >
         Sign-Up
-      </button>
+      </button> */}
 
       {/* Login Button */}
-      <button
+      {/* <button
         id="login-button"
         onClick={() => setView("login")}
         className="navbar-btn"
       >
         Login
-      </button>
+      </button> */}
     </header>
   );
 };
