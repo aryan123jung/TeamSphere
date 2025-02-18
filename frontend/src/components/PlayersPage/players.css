@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,58 +6,43 @@
 
 .player {
   position: relative;
-  margin-right: 1100px;
+  margin-left: 20px; /* Adjusted for better positioning */
   margin-top: 10px;
   color: #FF4500;
   font-size: 2rem;
+  text-align: left; 
 }
 
-/* 📌 Players Page Container - Holds all player-related content */
+/* 📌 Players Page Container */
 .players-page {
-  /* position: absolute;
-  top: -100px;
-  left: 195px;
+  position: absolute;
+  top: -50px;
+  left: 235px;
   transform: translateX(-50%);
-  width: 1350px; /* Ensures content fits well */
-  /* max-width: 1000px; */
-  /* height: 600px;
-  margin: 50px;
-  padding: 0;
+  width: 1350px; /* More responsive */
+  /* max-width: 1200px; */
+  height: 600px;
   backdrop-filter: blur(20px);
   border-radius: 20px;
   background: rgba(0, 0, 0, 0.6);
   color: aliceblue;
-  text-align: center; */ 
-  position: absolute;
-    top: -100px;
-    left: 188px;
-    transform: translateX(-50%);
-    width: 1350px; /* Ensures content fits well */
-    /* max-width: 1000px; */
-    height: 600px;
-    margin: 50px;
-    padding: 0;
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    color: aliceblue;
-    text-align: center;
+  text-align: center;
+  padding: 20px;
 }
 
-/* 📌 Search Bar - Allows users to search for players */
+/* 📌 Search Bar */
 .search-bar {
-  /* top: -50px; */
   border: none;
   border-radius: 30px;
-  width: 60%; /* Adjusted for better alignment */
+  width: 60%;
   max-width: 500px;
   padding: 12px;
-  margin-top: -50px;
   font-size: 16px;
   border: 1px solid #ccc;
+  margin-top: -20px; /* Adjusted for better spacing */
 }
 
-/* 📌 Close Button - Closes the players section */
+/* 📌 Close Button */
 .close-btnPlayers {
   position: absolute;
   top: 15px;
@@ -71,54 +56,44 @@
   transition: color 0.3s ease;
 }
 
-/* 📌 Close Button - Changes color on hover */
 .close-btnPlayers:hover {
   color: red;
 }
 
-/* 📌 ActiveSlider Component - The main slider container */
-.active-slider {
-  
-  /* display: flex;
+/* 📌 Swiper Container */
+.swiper-container {
+  width: 100%;
+  max-width: 1100px;
+  height: 450px;
+  margin: 20px auto;
+  border-radius: 30px;
+}
+
+/* 📌 Swiper Slide */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: start;
-  flex-direction: column; */
-  height: 700px;
-  width: 2500px;
-  margin: 0;
-  padding: 20px 0;
 }
 
-/* 📌 Swiper Component - Controls the main swiper size */
-Swiper .swiper-container {
-  width: 2500px;
-  height: 600px;
-  top: 50px;
-}
-
-/* 📌 SwiperSlide Component - Each individual slide container */
-.slide-container {
-  width: 350px !important;
-  /* bottom: 200px; */
+/* 📌 Slide Container */
+.swiper-slide .slide-container {
+  width: 300px;
+  /* max-width: 300px; */
   display: flex;
   flex-direction: column;
-  margin: 0;
-  margin-bottom: 50px;
   position: relative;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   color: white;
-  border-radius: 12px;
-  padding: 0;
-  height: 150px;
-  width: 600px;
+  border-radius: 30px;
+  height: 380px;
   overflow: hidden;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.1);
-  top: 40px;
+  margin-top: -20px;
 }
 
-
-/* 📌 SwiperSlide Background - Adds background image */
+/* 📌 Slide Background */
 .slide-bg {
   position: absolute;
   inset: 0;
@@ -126,104 +101,90 @@ Swiper .swiper-container {
   background-position: center;
 }
 
-/* 📌 SwiperSlide Background Overlay - Adds dark overlay effect */
+/* 📌 Overlay */
 .overlay {
   position: absolute;
   inset: 0;
   background-color: black;
-  opacity: 0.2; /* Default opacity */
+  opacity: 0.2;
   transition: opacity 0.3s ease;
 }
 
-/* 📌 SwiperSlide Background Overlay - Increases overlay visibility on hover */
 .slide-container:hover .overlay {
-  opacity: 0.5; /* Darkens overlay on hover */
+  opacity: 0.5;
 }
 
-/* 📌 SwiperSlide Content - Holds the text and icon inside slides */
+
+
+/* 📌 Slide Content */
 .slide-content {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 230px;
 }
 
-/* 📌 SwiperSlide Icon - Controls the icon style */
-.slide-icon {
-  color: #2563eb;/* Default icon color */
-  width: 36px; /* Icon width */
-  height: 36px; /* Icon height */
-  transition: color 0.3s ease;
-  bottom: 120px;
-}
-
-/* 📌 SwiperSlide Icon - Changes icon color on hover */
-.slide-container:hover .slide-icon {
-  color: #3b82f6; /* Changes icon color on hover */
-}
-
-/* 📌 SwiperSlide Title - Controls the title text */
-.slide-title {
-  font-size: 1.5rem; /* Default font size */
-  font-weight: bold;
-}
-
-/* 📌 SwiperSlide Text - Controls paragraph styling */
-.slide-text {
-  font-size: 1rem; /* Default text size */
-}
-
-/* 📌 SwiperSlide Arrow Icon - Controls the arrow at the bottom-left */
+/* 📌 Arrow Icon */
 .arrow-icon {
   position: absolute;
   bottom: 15px;
   left: 15px;
   width: 35px;
   height: 35px;
-  color: white; /* Default arrow color */
+  color: white;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-/* 📌 SwiperSlide Arrow Icon - Rotates and changes color on hover */
 .slide-container:hover .arrow-icon {
-  color: #3b82f6; /* Changes arrow color */
-  transform: rotate(45deg); /* Rotates arrow on hover */
+  color: #3b82f6;
+  transform: rotate(45deg);
 }
 
-/* 📌 Responsive Design - Adjusts layout for tablets and smaller screens */
-@media (max-width: 768px) {
+/* 📌 Responsive Design */
+@media (max-width: 1024px) {
   .players-page {
-      width: 90%;
-      padding: 15px;
-  }
-
-  .search-bar {
-      width: 80%;
+    width: 95%;
+    height: auto;
   }
 
   .swiper-container {
-      max-width: 100%;
+    max-width: 100%;
   }
 
-  .slide-container {
-      height: 200px;
-      width: 200px;
+  .swiper-slide .slide-container {
+    height: 300px;
+    max-width: 250px;
   }
 }
 
-/* 📌 Responsive Design - Adjusts layout for mobile screens */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .players-page {
-      width: 95%;
-      padding: 10px;
+    width: 90%;
+    padding: 15px;
   }
 
   .search-bar {
-      width: 100%;
+    width: 80%;
   }
 
   .slide-container {
-      height: 180px;
-      width: 180px;
+    height: 250px;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .players-page {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .slide-container {
+    height: 200px;
+    max-width: 180px;
   }
 }

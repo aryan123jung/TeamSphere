@@ -1,107 +1,133 @@
-// import React, { useEffect, useState } from "react";
+// import React from "react";
 // import { ImCross } from "react-icons/im";
-
-// import { Chart } from "chart.js";
-// import "./players.css"; // Separate CSS for Players Page
-// import ActiveSlider from "../Slider/ActiveSlider";
-
-
-//   const Players = ({ closePlayers }) => { // Accept the prop
-//     return (
-//       <>
-//       <ActiveSlider/>
-//       <div className="players-page">
-//         <div className="player-cards">
-//           <button className="close-btnPlayers" onClick={closePlayers}> {/* Use the prop */}
-//             <ImCross />
-//           </button>
-  
-//           <h1 className="player">Players</h1>
-//           <input type="text" className="search-bar" placeholder="Search players..." />
-  
-         
-//         </div> 
-//       </div>
-//       </>
-//     );
-//   };
-  
-//   export default Players;
-
-import React, { useEffect, useState } from "react";
-import { ImCross } from "react-icons/im";
-
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
-
-import "./players.css"; // Separate CSS for Players Page
-import { Swiper, SwiperSlide } from "swiper/react";
 // import "swiper/css";
+// import "swiper/css/navigation";
 // import "swiper/css/pagination";
-// import "swiper/css/free-mode";
-import { FreeMode, Pagination } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { FreeMode, Pagination } from "swiper/modules";
+// import { RxArrowTopRight } from "react-icons/rx";
+// import { ServiceData } from "../PlayersPage/index.js";
+// import "./players.css"; // Separate CSS for Players Page
+
+// const Players = ({ closePlayers }) => {
+//   return (
+//     <div className="players-page">
+//       <div className="player-cards">
+//         {/* Close Button */}
+//         <button className="close-btnPlayers" onClick={closePlayers}>
+//           <ImCross />
+//         </button>
+
+//         {/* Title */}
+//         <h1 className="player">Players</h1>
+
+//         {/* Search Bar */}
+//         <input type="text" className="search-bar" placeholder="Search players..." />
+
+//         {/* Swiper Slider */}
+//           <Swiper
+//             spaceBetween={15} // ✅ Fixed spacing issue
+//             breakpoints={{
+//               340: { slidesPerView: 2, spaceBetween: 10 },
+//             700: { slidesPerView: 3, spaceBetween: 15 },
+//             1024: { slidesPerView: 4, spaceBetween: 20 }, // ✅ Ensures proper horizontal layout
+//           }}
+//           freeMode={true}
+//           pagination={{ clickable: true }}
+//           modules={[FreeMode, Pagination]}
+//           className="swiper-container"
+//         >
+//           {ServiceData.map((item) => (
+//             <SwiperSlide key={item.title} className="swiper-slide">
+//               <div className="slide-container">
+//                 <div
+//                   className="slide-bg"
+//                   style={{ backgroundImage: `url(${item.backgroundImage})` }}
+//                 />
+//                 <div className="overlay" />
+//                 <div className="slide-content">
+//                   <item.icon className="slide-icon" />
+//                   <h1 className="slide-title">{item.title}</h1>
+//                   <p className="slide-text">{item.content}</p>
+//                 </div>
+//                 <RxArrowTopRight className="arrow-icon" />
+//               </div>
+//             </SwiperSlide>
+//           ))}
+//         </Swiper>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Players;
+import React from "react";
+import { ImCross } from "react-icons/im";
 import { RxArrowTopRight } from "react-icons/rx";
-import { ServiceData } from "../Slider/index.js";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Pagination } from "swiper/modules";
+import { ServiceData } from "../PlayersPage/index.js";
+import "./players.css"; // Ensure this file exists
 
-  const Players = ({ closePlayers }) => { // Accept the prop
-    return (
-      <>
-      <div className="players-page">
-        <div className="player-cards">
-          <button className="close-btnPlayers" onClick={closePlayers}> {/* Use the prop */}
-            <ImCross />
-          </button>
-  
-          <h1 className="player">Players</h1>
-          <input type="text" className="search-bar" placeholder="Search players..." />
+const Players = ({ closePlayers }) => {
+  return (
+    <div className="players-page">
+      <div className="player-cards">
+        {/* Close Button */}
+        <button className="close-btnPlayers" onClick={closePlayers}>
+          <ImCross />
+        </button>
 
-         
-    {/* <div className="active-slider"> */}
+        {/* Title */}
+        <h1 className="player">Players</h1>
 
-      <Swiper
-      
-        spaceBetween={-200} // Adjust the spacing between cards
+        {/* Search Bar */}
+        <input type="text" className="search-bar" placeholder="Search players..." />
 
-        breakpoints={{
-          340: { slidesPerView: 2, spaceBetween: 15 },
-          700: { slidesPerView: 3, spaceBetween: 15 },
-        }}
-        freeMode={true}
-        pagination={{ clickable: true }}
-        modules={[FreeMode, Pagination]}
-        className="swiper-container"
-      >
-            <div className="active-slider">
+        {/* Swiper Slider */}
+        <Swiper
+          spaceBetween={15}
+          breakpoints={{
+            340: { slidesPerView: 2, spaceBetween: 10 },
+            700: { slidesPerView: 3, spaceBetween: 15 },
+            1024: { slidesPerView: 4, spaceBetween: 20 },
+          }}
+          freeMode={true}
+          pagination={{ clickable: true }}
+          modules={[FreeMode, Pagination]}
+          className="swiper-container"
+        >
+          {ServiceData.map((item, index) => (
+            <SwiperSlide key={index} className="swiper-slide">
+              <div className="slide-container">
+                {/* Background Image */}
+                <div
+                  className="slide-bg"
+                  style={{
+                    backgroundImage: item.backgroundImage ? `url(${item.backgroundImage})` : "none",
+                  }}
+                />
+                <div className="overlay" />
 
-        {ServiceData.map((item) => (
-          <SwiperSlide key={item.title}>
-            <div className="slide-container">
-              <div
-                className="slide-bg"
-                style={{ backgroundImage: `url(${item.backgroundImage})` }}
-              />
-              <div className="overlay" />
-              <div className="slide-content">
-                <item.icon className="slide-icon" />
-                <h1 className="slide-title">{item.title}</h1>
-                <p className="slide-text">{item.content}</p>
+                {/* Slide Content */}
+                <div className="slide-content">
+                  {item.icon && <item.icon className="slide-icon" />}
+                  <h1 className="slide-title">{item.title}</h1>
+                  <p className="slide-text">{item.content}</p>
+                </div>
+
+                {/* Arrow Icon */}
+                <RxArrowTopRight className="arrow-icon" />
               </div>
-              <RxArrowTopRight className="arrow-icon" />
-            </div>
-          </SwiperSlide>
-        ))}
-            </div>
-
-      </Swiper>
- 
-  
-         
-        </div> 
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-      </>
-    );
-  };
-  
-  export default Players;
-  
-  
+    </div>
+  );
+};
+
+export default Players;

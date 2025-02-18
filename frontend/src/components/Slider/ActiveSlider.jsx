@@ -56,49 +56,49 @@
 
 // export default ActiveSlider;
 
-import React from 'react';
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/free-mode";
-import { FreeMode, Pagination } from "swiper/modules";
-import { RxArrowTopRight } from "react-icons/rx";
-import { ServiceData } from "../Slider/index.js";
-import "./ActiveSlider.css"; // Import the CSS file
+// import React from 'react';
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/free-mode";
+// import { FreeMode, Pagination } from "swiper/modules";
+// import { RxArrowTopRight } from "react-icons/rx";
+// import { ServiceData } from "../Slider/index.js";
+// import "./ActiveSlider.css"; // Import the CSS file
 
-const ActiveSlider = () => {
-  return (
-    <div className="active-slider">
-      <Swiper
-        breakpoints={{
-          340: { slidesPerView: 2, spaceBetween: 15 },
-          700: { slidesPerView: 3, spaceBetween: 15 },
-        }}
-        freeMode={true}
-        pagination={{ clickable: true }}
-        modules={[FreeMode, Pagination]}
-        className="swiper-container"
-      >
-        {ServiceData.map((item) => (
-          <SwiperSlide key={item.title}>
-            <div className="slide-container">
-              <div
-                className="slide-bg"
-                style={{ backgroundImage: `url(${item.backgroundImage})` }}
-              />
-              <div className="overlay" />
-              <div className="slide-content">
-                <item.icon className="slide-icon" />
-                <h1 className="slide-title">{item.title}</h1>
-                <p className="slide-text">{item.content}</p>
-              </div>
-              <RxArrowTopRight className="arrow-icon" />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
-  );
-};
+// const ActiveSlider = () => {
+//   return (
+//     <div className="active-slider">
+//       <Swiper
+//         breakpoints={{
+//           340: { slidesPerView: 2, spaceBetween: 15 },
+//           700: { slidesPerView: 3, spaceBetween: 15 },
+//         }}
+//         freeMode={true}
+//         pagination={{ clickable: true }}
+//         modules={[FreeMode, Pagination]}
+//         className="swiper-container"
+//       >
+//         {ServiceData.map((item) => (
+//           <SwiperSlide key={item.title}>
+//             <div className="slide-container">
+//               <div
+//                 className="slide-bg"
+//                 style={{ backgroundImage: `url(${item.backgroundImage})` }}
+//               />
+//               <div className="overlay" />
+//               <div className="slide-content">
+//                 <item.icon className="slide-icon" />
+//                 <h1 className="slide-title">{item.title}</h1>
+//                 <p className="slide-text">{item.content}</p>
+//               </div>
+//               <RxArrowTopRight className="arrow-icon" />
+//             </div>
+//           </SwiperSlide>
+//         ))}
+//       </Swiper>
+//     </div>
+//   );
+// };
 
-export default ActiveSlider;
+// export default ActiveSlider;
