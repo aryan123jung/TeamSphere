@@ -70,7 +70,8 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import { ServiceData } from "../PlayersPage/index.js";
-import "./players.css"; // Ensure this file exists
+// import "./players.css"; // Ensure this file exists
+import "./pla.css";
 
 const Players = ({ closePlayers }) => {
   return (

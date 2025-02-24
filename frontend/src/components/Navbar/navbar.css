@@ -12,7 +12,7 @@
   z-index: 100;
 }
 
-.navbar-logo img {
+/* .navbar-logo img {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,6 +20,17 @@
   border-radius: 10px;
   top: 20px;
   left: 16px;
+} */
+
+.navbar-logo img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  margin-top: 30px;
+  left: 16px;
+  width: 200px;
 }
 
 /* Buttons */
