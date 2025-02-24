@@ -1,0 +1,132 @@
+h1 {
+  margin-left: -1000px;
+}
+
+/* hr {
+  border: none; /* Removes default border 
+  border-top: 2px solid #000; /* Draws a solid black line 
+  width: 80%; /* Makes the line 80% of the container width 
+  margin: 20px auto; /* Centers the line and adds spacing around it 
+} */
+/* Vertical Line Style */
+.vertical-line {
+  width: 2px;
+  height: 800px;
+  background-color: rgb(178, 174, 174);
+  margin: 20px auto;
+  margin-left: -230px;
+  margin-top: -513px;
+}
+
+
+
+/* Player details modal */
+.player-details-modal {
+  position: absolute;
+  top: 0;
+  left: 676px; /* Center the modal horizontally */
+  transform: translateX(-50%);
+  width: 1350px;
+  height: 600px;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* backdrop-filter: blur(20px);
+border-radius: 20px;
+background: rgba(0, 0, 0, 0.6); */
+  overflow: hidden; /* Disable overflow for the modal */
+}
+
+
+/* Modal content */
+.player-details-content {
+  /* color: black; */
+  backdrop-filter: blur(900px);
+  background-color: transparent; 
+  /* background: orange; */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  height: 600px;
+  width: 1350px; /* Ensure it fits within the parent container */
+  /* max-width: 500px; Adjust size as needed */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: red;
+}
+
+/* Player photo */
+.player-photo {
+  margin-left: -900px;
+  margin-top: 35px;
+  /* width: 120px;
+  height: 120px; */
+  width: 300px;
+  max-width: 300px;
+  height: 200px;
+  max-height: 300px !important;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+/* Spider chart */
+.player-details-content h2 {
+  /* font-size: 1.5rem; */
+  font-size: 23px;
+    margin-top: -50px;
+    margin-left: -1070px;
+}
+.spider-chart {
+  margin-top: -720px;
+  /* max-width: 100%; */
+  margin-left: 850px;
+  width: 900px;
+  height: 500px; /* Control chart height */
+
+}
+
+/* Adjust title size */
+
+
+/* Adjust text size */
+.player-details-content p {
+  font-size: 20px;
+  margin-left: -900px;
+  top: 60px;
+  margin-top: 20px;
+  align-items:start; /* Align all content to the left */
+
+}
+
+/* Styling the players-page container */
+.players-page {
+  position: absolute;
+  top: -50px;
+  left: 235px;
+  transform: translateX(-50%);
+  width: 1350px;
+  height: 600px;
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: aliceblue;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden; /* Disable scroll on the parent container */
+}

@@ -39,6 +39,7 @@
 #SignUp-button,
 #AboutUs-button,
 #AddPlayer-button,
+#Logout-button,
 #Players-button {
   font-family: 'Roboto';
   font-weight: bold;
@@ -58,6 +59,7 @@
 #SignUp-button:hover,
 #AboutUs-button:hover,
 #AddPlayer-button:hover,
+#Logout-button:hover,
 #Players-button:hover {
   color: #FF4500; /* Change text color on hover */
 }
@@ -67,6 +69,7 @@
 #SignUp-button::after,
 #AboutUs-button::after,
 #AddPlayer-button::after,
+#Logout-button::after,
 #Players-button::after {
   content: '';
   display: block;
@@ -82,6 +85,7 @@
 #SignUp-button:hover::after,
 #AboutUs-button:hover::after,
 #AddPlayer-button:hover::after,
+#Logout-button:hover::after,
 #Players-button:hover::after {
   width: 100%; /* Expand underline on hover */
 }
@@ -91,12 +95,13 @@
 #SignUp-button.active::after,
 #AboutUs-button.active::after,
 #AddPlayer-button.active::after,
+#Logout-button.active::after,
 #Players-button.active::after {
   width: 100%; /* Show underline for the active page */
 }
 
 /* Button Positions */
-#login-button {
+/* #login-button {
   right: 60px;
   top: 20px;
 }
@@ -104,27 +109,34 @@
 #SignUp-button {
   right: 150px;
   top: 20px;
-}
+} */
 
 #Home-button {
-  right: 260px;
-  top: 20px;
-}
-
-#AboutUs-button {
-  right: 360px;
-  top: 20px;
-}
-
-#AddPlayer-button {
-  right: 490px;
+  right: 640px;
   top: 20px;
 }
 
 #Players-button {
-  right: 640px;
+  right: 500px;
   top: 20px;
 }
+
+#AddPlayer-button {
+  right: 330px;
+  top: 20px;
+}
+
+
+#AboutUs-button {
+  right: 180px;
+  top: 20px;
+}
+
+#Logout-button{
+  right: 50px;
+  top: 20px;
+}
+
 
 /* Navbar Buttons */
 .navbar-btn {

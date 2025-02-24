@@ -1,13 +1,15 @@
+
 // import React from "react";
 // import { ImCross } from "react-icons/im";
+// import { RxArrowTopRight } from "react-icons/rx";
 // import "swiper/css";
 // import "swiper/css/navigation";
 // import "swiper/css/pagination";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import { FreeMode, Pagination } from "swiper/modules";
-// import { RxArrowTopRight } from "react-icons/rx";
 // import { ServiceData } from "../PlayersPage/index.js";
-// import "./players.css"; // Separate CSS for Players Page
+// // import "./players.css"; // Ensure this file exists
+// import "./pla.css";
 
 // const Players = ({ closePlayers }) => {
 //   return (
@@ -25,31 +27,38 @@
 //         <input type="text" className="search-bar" placeholder="Search players..." />
 
 //         {/* Swiper Slider */}
-//           <Swiper
-//             spaceBetween={15} // ✅ Fixed spacing issue
-//             breakpoints={{
-//               340: { slidesPerView: 2, spaceBetween: 10 },
+//         <Swiper
+//           spaceBetween={15}
+//           breakpoints={{
+//             340: { slidesPerView: 2, spaceBetween: 10 },
 //             700: { slidesPerView: 3, spaceBetween: 15 },
-//             1024: { slidesPerView: 4, spaceBetween: 20 }, // ✅ Ensures proper horizontal layout
+//             1024: { slidesPerView: 4, spaceBetween: 20 },
 //           }}
 //           freeMode={true}
 //           pagination={{ clickable: true }}
 //           modules={[FreeMode, Pagination]}
 //           className="swiper-container"
 //         >
-//           {ServiceData.map((item) => (
-//             <SwiperSlide key={item.title} className="swiper-slide">
+//           {ServiceData.map((item, index) => (
+//             <SwiperSlide key={index} className="swiper-slide">
 //               <div className="slide-container">
+//                 {/* Background Image */}
 //                 <div
 //                   className="slide-bg"
-//                   style={{ backgroundImage: `url(${item.backgroundImage})` }}
+//                   style={{
+//                     backgroundImage: item.backgroundImage ? `url(${item.backgroundImage})` : "none",
+//                   }}
 //                 />
 //                 <div className="overlay" />
+
+//                 {/* Slide Content */}
 //                 <div className="slide-content">
-//                   <item.icon className="slide-icon" />
+//                   {item.icon && <item.icon className="slide-icon" />}
 //                   <h1 className="slide-title">{item.title}</h1>
 //                   <p className="slide-text">{item.content}</p>
 //                 </div>
+
+//                 {/* Arrow Icon */}
 //                 <RxArrowTopRight className="arrow-icon" />
 //               </div>
 //             </SwiperSlide>
@@ -61,7 +70,11 @@
 // };
 
 // export default Players;
-import React from "react";
+
+
+
+
+import React, { useState } from "react";
 import { ImCross } from "react-icons/im";
 import { RxArrowTopRight } from "react-icons/rx";
 import "swiper/css";
@@ -69,11 +82,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
-import { ServiceData } from "../PlayersPage/index.js";
-// import "./players.css"; // Ensure this file exists
+import { ServiceData } from "../PlayersPage/index.js"; // Ensure this contains correct player data
+import PlayerDetails from "../PlayersPage/PlayerDetails"; // Import the modal component
 import "./pla.css";
 
 const Players = ({ closePlayers }) => {
+  const [selectedPlayer, setSelectedPlayer] = useState(null);
+
   return (
     <div className="players-page">
       <div className="player-cards">
@@ -101,23 +116,25 @@ const Players = ({ closePlayers }) => {
           modules={[FreeMode, Pagination]}
           className="swiper-container"
         >
-          {ServiceData.map((item, index) => (
+          {ServiceData.map((player, index) => (
             <SwiperSlide key={index} className="swiper-slide">
-              <div className="slide-container">
+              <div
+                className="slide-container"
+                onClick={() => setSelectedPlayer(player)} // Open modal on click
+              >
                 {/* Background Image */}
                 <div
                   className="slide-bg"
                   style={{
-                    backgroundImage: item.backgroundImage ? `url(${item.backgroundImage})` : "none",
+                    backgroundImage: player.photo ? `url(${player.photo})` : "none",
                   }}
                 />
                 <div className="overlay" />
 
                 {/* Slide Content */}
                 <div className="slide-content">
-                  {item.icon && <item.icon className="slide-icon" />}
-                  <h1 className="slide-title">{item.title}</h1>
-                  <p className="slide-text">{item.content}</p>
+                  <h1 className="slide-title">{player.name}</h1>
+                  <p className="slide-text">{player.category}</p>
                 </div>
 
                 {/* Arrow Icon */}
@@ -127,8 +144,14 @@ const Players = ({ closePlayers }) => {
           ))}
         </Swiper>
       </div>
+
+      {/* Player Details Modal */}
+      {selectedPlayer && (
+        <PlayerDetails player={selectedPlayer} onClose={() => setSelectedPlayer(null)} />
+      )}
     </div>
   );
 };
 
 export default Players;
+
