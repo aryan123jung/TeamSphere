@@ -48,8 +48,7 @@ import React, { useState } from "react";
 import videoBg from "../assets/videoBg4.mp4";
 import "./home.css";
 import Navbar from "../components/Navbar/Navbar";
-import Login from "../components/Login/Login";
-import Signup from "./SignUp/Signup";
+
 import Players from "./PlayersPage/Players";
 import Addplayer from "./AddPlayer/Addplayer";
 // import Addplayer from "./AddPlayer/Addplayer"
@@ -71,7 +70,7 @@ const Home = () => {
         </div>
 
         {/* Conditional Rendering for Login, Signup, Players, or Add Player */}
-        {view === "login" && (
+        {/* {view === "login" && (
           <div className="dashboard">
             <Login
               closeLogin={() => setView(null)}
@@ -86,7 +85,7 @@ const Home = () => {
               openLogin={() => setView("login")} // Open Login
             />
           </div>
-        )}
+        )} */}
         {view === "players" && (
           <div className="dashboard">
             <Players
