@@ -3,8 +3,6 @@
 // import videoBg from "../assets/videoBg4.mp4";
 // import "./home.css";
 // import Navbar from "../components/Navbar/Navbar";
-// import Login from "../components/Login/Login";
-// import Signup from "./SignUp/Signup";
 
 // const Home = () => {
 //   const [view, setView] = useState(null); // Manage which component to display

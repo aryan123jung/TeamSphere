@@ -150,16 +150,22 @@
 // };
 
 // export default LoginRegister;
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './loginregister.css';
 
 const LoginRegister = () => {
   const [isSignUp, setIsSignUp] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
+
+  // States for Login Form
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+
+  // States for Sign-Up Form
+  const [signupName, setSignupName] = useState('');
+  const [signupEmail, setSignupEmail] = useState('');
+  const [signupPassword, setSignupPassword] = useState('');
+
   const navigate = useNavigate();
 
   // Redirect to home if already logged in
@@ -183,13 +189,17 @@ const LoginRegister = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ name: signupName, email: signupEmail, password: signupPassword }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
         alert(data.message);
+        // Clear sign-up fields after successful registration (optional)
+        setSignupName('');
+        setSignupEmail('');
+        setSignupPassword('');
         setIsSignUp(false);
       } else {
         alert(data.message);
@@ -209,7 +219,7 @@ const LoginRegister = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email: loginEmail, password: loginPassword }),
       });
 
       const data = await response.json();
@@ -240,8 +250,8 @@ const LoginRegister = () => {
             type="email"
             placeholder="Email"
             className="auth-input"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={loginEmail}
+            onChange={(e) => setLoginEmail(e.target.value)}
           />
 
           <label htmlFor="login-password" className="auth-label">Password</label>
@@ -250,8 +260,8 @@ const LoginRegister = () => {
             type="password"
             placeholder="Password"
             className="auth-input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={loginPassword}
+            onChange={(e) => setLoginPassword(e.target.value)}
           />
 
           <p className="toggle-form" onClick={handleToggle}>
@@ -271,8 +281,8 @@ const LoginRegister = () => {
             type="text"
             placeholder="Username"
             className="auth-input"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={signupName}
+            onChange={(e) => setSignupName(e.target.value)}
           />
 
           <label htmlFor="signup-email" className="auth-label1">Email</label>
@@ -281,8 +291,8 @@ const LoginRegister = () => {
             type="email"
             placeholder="Email"
             className="auth-input"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={signupEmail}
+            onChange={(e) => setSignupEmail(e.target.value)}
           />
 
           <label htmlFor="signup-password" className="auth-label1">Password</label>
@@ -291,8 +301,8 @@ const LoginRegister = () => {
             type="password"
             placeholder="Password"
             className="auth-input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={signupPassword}
+            onChange={(e) => setSignupPassword(e.target.value)}
           />
 
           <p className="toggle-formSIGNUP" onClick={handleToggle}>

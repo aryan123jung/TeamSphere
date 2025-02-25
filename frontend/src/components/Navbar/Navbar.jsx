@@ -83,6 +83,7 @@ const Navbar = ({ setView }) => {
       <div className="navbar-logo">
         <img src="../src/assets/nm.png" alt="logo" />
       </div>
+      
 
       {/* Players Button */}
       <button
