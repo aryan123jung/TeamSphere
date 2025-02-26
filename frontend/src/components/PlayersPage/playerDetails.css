@@ -1,5 +1,5 @@
 h1 {
-  margin-left: -1000px;
+  margin-left: -1000px !important;
 }
 
 /* hr {
@@ -18,6 +18,15 @@ h1 {
   margin-top: -513px;
 }
 
+.update {
+  margin-left: 1200px;
+  width: 110px;
+  height: 35px;
+  border-radius: 40px;
+}
+.update:hover {
+  background-color: rgb(214, 255, 127);
+}
 
 
 /* Player details modal */
@@ -64,10 +73,16 @@ background: rgba(0, 0, 0, 0.6); */
   position: absolute;
   top: 10px;
   right: 10px;
-  background: none;
   border: none;
-  font-size: 20px;
+  background: none;
+  font-size: 18px;
+  color: #fff;
   cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
   color: red;
 }
 

@@ -140,6 +140,9 @@ ChartJS.register(CategoryScale, RadialLinearScale, LineElement, PointElement, Ti
 const PlayerDetails = ({ player, closePlayerDetails }) => {  // ✅ Accept closePlayerDetails prop
   const [chartInstance, setChartInstance] = useState(null);
 
+
+
+
   const data = {
     labels: ["Batting", "Bowling", "Fielding", "Fitness", "Match Awareness"],
     datasets: [
@@ -188,6 +191,9 @@ const PlayerDetails = ({ player, closePlayerDetails }) => {  // ✅ Accept close
     },
   };
 
+
+
+
   useEffect(() => {
     if (chartInstance) {
       chartInstance.destroy(); 
@@ -207,6 +213,9 @@ const PlayerDetails = ({ player, closePlayerDetails }) => {  // ✅ Accept close
       }
     };
   }, [player]);
+
+
+
 
   return (
     <div className="player-details-modal">
@@ -229,6 +238,12 @@ const PlayerDetails = ({ player, closePlayerDetails }) => {  // ✅ Accept close
         <div className="spider-chart">
           <h2>Spider-Chart</h2>
           <canvas id="playerChart"></canvas>
+        </div>
+
+        <div className="update_button">
+          <button className="update">
+            Update
+          </button>
         </div>
       </div>
     </div>
