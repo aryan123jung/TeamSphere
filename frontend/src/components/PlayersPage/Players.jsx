@@ -92,18 +92,14 @@ const Players = ({ closePlayers }) => {
   return (
     <div className="players-page">
       <div className="player-cards">
-        {/* Close Button */}
         <button className="close-btnPlayers" onClick={closePlayers}>
           <ImCross />
         </button>
 
-        {/* Title */}
         <h1 className="player">Players</h1>
 
-        {/* Search Bar */}
         <input type="text" className="search-bar" placeholder="Search players..." />
 
-        {/* Swiper Slider */}
         <Swiper
           spaceBetween={15}
           breakpoints={{
@@ -131,7 +127,7 @@ const Players = ({ closePlayers }) => {
                 />
                 <div className="overlay" />
 
-                {/* Slide Content */}
+                {/* card ko baremah ani tesbhitra ko name,category ani arrow*/}
                 <div className="slide-content">
                   <h1 className="slide-title">{player.name}</h1>
                   <p className="slide-text">{player.category}</p>
@@ -140,6 +136,8 @@ const Players = ({ closePlayers }) => {
                 {/* Arrow Icon */}
                 <RxArrowTopRight className="arrow-icon" />
               </div>
+
+              
             </SwiperSlide>
           ))}
         </Swiper>
