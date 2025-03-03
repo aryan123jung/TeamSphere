@@ -1,41 +1,68 @@
-// const { Sequelize } = require('sequelize')
+// const { Sequelize } = require('sequelize');
+// require('dotenv').config();
 
-// const sequelize = new Sequelize('TeamSphere', 'postgres' , 'admin123', {
-//   host: 'localhost',
-//     dialect : 'postgres',
-//     port : 5432,
-//     logging : false,
+// const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
+//   host: process.env.DB_HOST,
+//   dialect: 'postgres',
+//   port: process.env.DB_PORT,
+//   logging: false, // Disable logging for cleaner output
 // });
 
-// async function testConnection() { 
-//   try{
+// // Test the database connection
+// async function testConnection() {
+//   try {
 //     await sequelize.authenticate();
-//     console.log('DB Connection is successful...............')
-//   }
-//   catch(error){
-//     console.error('Unable to connect....', error)
+//     console.log('DB Connection is successful...............');
+//   } catch (error) {
+//     console.error('Unable to connect to the database:', error);
 //   }
 // }
 
-// testConnection()
+// testConnection();
 
 // module.exports = sequelize;
+
+
+
+
+
+
+// const { Sequelize } = require('sequelize');
+// require('dotenv').config();
+
+// const sequelize = new Sequelize(
+//   process.env.DB_NAME,
+//   process.env.DB_USER,
+//   process.env.DB_PASSWORD,
+//   {
+//     host: process.env.DB_HOST,
+//     dialect: 'postgres',
+//   }
+// );
+
+// module.exports = sequelize;
+
 
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-  host: process.env.DB_HOST,
-  dialect: 'postgres',
-  port: process.env.DB_PORT,
-  logging: false, // Disable logging for cleaner output
-});
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+  {
+    host: process.env.DB_HOST,
+    dialect: 'postgres',
+    port: process.env.DB_PORT,
+    logging: false, // Disable logging for cleaner output
+  }
+);
 
 // Test the database connection
 async function testConnection() {
   try {
     await sequelize.authenticate();
-    console.log('DB Connection is successful...............');
+    console.log('DB Connection is successful...');
   } catch (error) {
     console.error('Unable to connect to the database:', error);
   }
