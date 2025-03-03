@@ -1,5 +1,5 @@
-h1 {
-  margin-left: -1000px !important;
+.tt {
+  margin-left: -1850px !important;
 }
 
 /* hr {
@@ -31,9 +31,9 @@ h1 {
 
 /* Player details modal */
 .player-details-modal {
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  left: 676px; /* Center the modal horizontally */
+  left: 676px; /* Center the modal horizontally 
   transform: translateX(-50%);
   width: 1350px;
   height: 600px;
@@ -44,8 +44,25 @@ h1 {
   z-index: 1000;
   /* backdrop-filter: blur(20px);
 border-radius: 20px;
-background: rgba(0, 0, 0, 0.6); */
-  overflow: hidden; /* Disable overflow for the modal */
+background: rgba(0, 0, 0, 0.6); 
+  overflow: hidden; Disable overflow for the modal */
+  position: absolute;
+    top: -36px;
+    left: 239px;
+    transform: translateX(-50%);
+    width: 1350px;
+    height: 600px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(200px);
+    /* background: transparent; */
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+    margin-left: 435px;
+    margin-top: 40px;
 }
 
 
@@ -104,7 +121,7 @@ background: rgba(0, 0, 0, 0.6); */
 .player-details-content h2 {
   /* font-size: 1.5rem; */
   font-size: 23px;
-    margin-top: -50px;
+    margin-top: -100px;
     margin-left: -1070px;
 }
 .spider-chart {
@@ -122,8 +139,8 @@ background: rgba(0, 0, 0, 0.6); */
 /* Adjust text size */
 .player-details-content p {
   font-size: 20px;
-  margin-left: -900px;
-  top: 60px;
+  margin-left: -850px;
+  top: 40px;
   margin-top: 20px;
   align-items:start; /* Align all content to the left */
 
@@ -144,4 +161,159 @@ background: rgba(0, 0, 0, 0.6); */
   text-align: center;
   padding: 20px;
   overflow: hidden; /* Disable scroll on the parent container */
+}
+
+
+
+
+/*edit and delete button*/
+
+.edit-stats-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3); /* Modern gradient */
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px; /* Smooth rounded edges */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space for an optional icon */
+  margin-left: 425px;
+  margin-bottom: -10px ;
+}
+
+.edit-stats-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #003580);
+  transform: translateY(-2px); /* Subtle hover effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.edit-stats-btn:active {
+  transform: scale(0.98); /* Press effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-stats-btn:disabled {
+  background: #cccccc;
+  /* cursor: not-allowed; */
+  box-shadow: none;
+}
+
+
+.delete-btn {
+    width: 120px;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: -940px !important;
+}
+
+.delete-btn:hover {
+    background: #45a049;
+}
+
+
+
+.edit-stats-form {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  width: 800px; /* Set the width to 800px */
+  height: 70px; /* Set the height to 70px */
+  margin: 20px auto;
+  margin-left: 475px;
+  /* margin-top: 200px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align items in a horizontal row */
+  gap: 10px;
+  box-sizing: border-box;
+  margin-bottom: -60px;
+}
+
+.edit-stats-form h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  text-align: left;
+  flex-basis: 20%; /* Keep the title compact on the left */
+}
+
+.edit-stats-form label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #555;
+  margin: 0;
+  display: block;
+}
+
+.edit-stats-form input {
+  width: 50px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  height: 30px;
+  /* flex-basis: 15%; Set width of input fields to 15% */
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.edit-stats-form input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+  background-color: #fff;
+}
+
+.edit-stats-form button {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  width: 15%; /* Set button width to fit the compact form */
+  height: 30px;
+}
+
+.edit-stats-form button:hover {
+  background: linear-gradient(135deg, #0056b3, #003580);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.edit-stats-form button:active {
+  transform: scale(0.98);
+}
+
+.edit-stats-form button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.edit-stats-form input::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+.edit-stats-form input:focus::placeholder {
+  color: transparent; /* Hide placeholder on focus */
 }

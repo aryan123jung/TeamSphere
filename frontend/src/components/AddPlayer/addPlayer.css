@@ -21,8 +21,9 @@
     top: -100px;
     left: 188px;
     transform: translateX(-50%);
-    width: 1350px;
-    height: 600px;
+    /* width: 1350px; */
+    width: 800px !important;
+    height: 630px !important;
     margin: 50px;
     padding: 20px;
     backdrop-filter: blur(20px);
@@ -47,8 +48,20 @@
     cursor: pointer;
 }
 
+
+
+.heading {
+    margin-left: -900px !important;
+} 
+
+h2 {
+    margin-top: -30px;
+    font-size: 20px;
+    margin-left: 80px;
+
+} 
 .form {
-    margin-top: 25px;
+    margin-top: 35px !important;
     margin-left: 50px;
     display: flex;
     justify-content: space-between;
@@ -68,7 +81,8 @@ form {
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px !important;
+  
 }
 
 .players_stats {
@@ -76,8 +90,10 @@ form {
 }
 
 .photo {
+    margin-top: 10px;
     margin-bottom: 8px;
     text-align: left;
+    margin-left: 316px;
 }
 
 .photo label {
@@ -98,6 +114,8 @@ form {
 .player-name {
     margin-bottom: 8px;
     text-align: left;
+    margin-left: 316px;
+
 }
 
 .player-name label {
@@ -124,6 +142,8 @@ form {
 .player-id {
     margin-bottom: 8px;
     text-align: left;
+    margin-left: 316px !important;
+
 }
 
 .player-id label {
@@ -150,6 +170,8 @@ form {
 .age {
     margin-bottom: 8px;
     text-align: left;
+    margin-left: 316px;
+
 }
 
 .age label {
@@ -176,6 +198,8 @@ form {
 .nationality {
     margin-bottom: 8px;
     text-align: left;
+    margin-left: 316px;
+
 }
 
 .nationality label {
@@ -200,162 +224,48 @@ form {
 }
 
 .category {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     text-align: left;
+    margin-left: 316px;
 }
 
 .category label {
     display: block;
-    font-size: 14px;
-    margin-bottom: 1px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #ffffff; /* Adjust based on your theme */
 }
 
-.category input {
-    /* width: 100%;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    color: aliceblue; */
+.category select {
     width: 600px;
-    padding: 8px;
-    border: none;
-    border-radius: 15px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
     background: rgba(255, 255, 255, 0.2);
     color: aliceblue;
-}
-
-.batting {
-    margin-bottom: 8px;
-    text-align: left;
-}
-
-.batting label {
-    display: block;
     font-size: 14px;
-    margin-bottom: 1px;
+    appearance: none; /* Removes default dropdown styling */
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
 }
 
-.batting input {
-    /* width: 100%;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    color: aliceblue; */
-    width: 600px;
-    padding: 8px;
-    border: none;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    color: aliceblue;
+/* Hover effect */
+.category select:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
 
-.bowling {
-    margin-bottom: 8px;
-    text-align: left;
+/* Focus effect */
+.category select:focus {
+    border-color: rgba(255, 255, 255, 0.7);
+    /* background: rgba(255, 255, 255, 0.25); */
+    background: black;
 }
 
-.bowling label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 1px;
-}
 
-.bowling input {
-    /* width: 100%;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    color: aliceblue; */
-    width: 600px;
-    padding: 8px;
-    border: none;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    color: aliceblue;
-}
 
-.fitness {
-    margin-bottom: 8px;
-    text-align: left;
-}
-
-.fitness label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 1px;
-}
-
-.fitness input {
-    /* width: 100%;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    color: aliceblue; */
-    width: 600px;
-    padding: 8px;
-    border: none;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    color: aliceblue;
-}
-
-.fielding {
-    margin-bottom: 8px;
-    text-align: left;
-}
-
-.fielding label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 1px;
-}
-
-.fielding input {
-    /* width: 100%;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    color: aliceblue; */
-    width: 600px;
-    padding: 8px;
-    border: none;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    color: aliceblue;
-}
-
-.match-awareness {
-    margin-bottom: 8px;
-    text-align: left;
-}
-
-.match-awareness label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 1px;
-}
-
-.match-awareness input {
-    /* width: 100%;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    color: aliceblue; */
-    width: 600px;
-    padding: 8px;
-    border: none;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    color: aliceblue;
-}
-
-.submit-button {
+.Addplayer-button {
     width: 100px;
     padding: 10px;
     border: none;
@@ -365,9 +275,183 @@ form {
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
-    margin-left: 280px;
+    margin-left: 540px !important;
 }
 
-.submit-button:hover {
+.Addplayer-button:hover {
     background: #45a049;
 }
+
+.next-button {
+    width: 50px;
+    background-color: #007bff;
+    background: transparent;
+    border: none;
+    /* padding: 10px 15px; */
+    border-radius: 20px;
+    margin-left: 900px;
+    margin-top: -30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+.next-button:hover {
+    background-color: #0056b3;
+  }
+   
+  .icon {
+    font-size: 24px;
+    color: white;
+  }
+
+  
+  
+
+
+/* h3 {
+    margin-right: -1400px;
+    margin-top: -500px;
+    font-size: 30px;
+} */
+
+/* .batting {
+    margin-bottom: 8px;
+    text-align: left;
+    margin-left: 650px;
+} */
+
+/* .batting label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+} */
+
+/* .batting input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; /
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+} */
+
+/* .bowling {
+    margin-bottom: 8px;
+    text-align: left;
+    margin-left: 650px;
+
+}
+
+.bowling label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+} */
+
+/* .bowling input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; /
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+} */
+/* 
+.fitness {
+    margin-bottom: 8px;
+    text-align: left;
+    margin-left: 650px;
+
+}
+
+.fitness label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+} */
+
+/* .fitness input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; /
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+} */
+
+/* .fielding {
+    margin-bottom: 8px;
+    text-align: left;
+    margin-left: 650px;
+
+}
+
+.fielding label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+} */
+/* 
+.fielding input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; /
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+} */
+
+/* .match-awareness {
+    margin-bottom: 8px;
+    text-align: left;
+    margin-left: 650px;
+
+}
+
+.match-awareness label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 1px;
+} */
+
+/* .match-awareness input {
+    /* width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue; /
+    width: 600px;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: aliceblue;
+} */

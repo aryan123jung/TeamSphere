@@ -1,198 +1,197 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .player {
-    position: relative;
-    margin-left: 20px; /* Adjusted for better positioning */
-    margin-top: 10px;
-    color: #FF4500;
-    font-size: 2rem;
-    text-align: left; 
-  }
-  
-  /* 📌 Players Page Container */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.player {
+  position: relative;
+  margin-left: 20px; /* Adjusted for better positioning */
+  margin-top: 10px;
+  color: #FF4500;
+  font-size: 2rem;
+  text-align: left; 
+}
+
+/* 📌 Players Page Container */
+.players-page {
+  position: absolute;
+  top: -50px;
+  left: 235px;
+  transform: translateX(-50%);
+  width: 1350px; /* More responsive */
+  /* max-width: 1200px; */
+  height: 600px;
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: aliceblue;
+  text-align: center;
+  padding: 20px;
+}
+
+/* 📌 Search Bar */
+.search-bar {
+  border: none;
+  border-radius: 30px;
+  width: 60%;
+  max-width: 500px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  margin-top: -20px; /* Adjusted for better spacing */
+}
+
+/* 📌 Close Button */
+.close-btnPlayers {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.close-btnPlayers:hover {
+  color: red;
+}
+
+/* 📌 Swiper Container */
+.swiper-container {
+  width: 100%;
+  max-width: 1100px;
+  height: 450px;
+  margin: 20px auto;
+  border-radius: 30px;
+}
+
+/* 📌 Swiper Slide */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 📌 Slide Container */
+.swiper-slide .slide-container {
+  width: 300px;
+  /* max-width: 300px; */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+  border-radius: 30px;
+  height: 380px;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: -20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on player cards */
+.slide-container:hover, 
+.slide-container:active {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Soft glow effect */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* 📌 Slide Background */
+.slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 📌 Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+}
+
+.slide-container:hover .overlay {
+  opacity: 0.5;
+}
+
+/* 📌 Slide Content */
+.slide-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 230px;
+}
+
+/* 📌 Arrow Icon */
+.arrow-icon {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 35px;
+  height: 35px;
+  color: white;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.slide-container:hover .arrow-icon {
+  color: #3b82f6;
+  transform: rotate(45deg);
+}
+
+/* 📌 Responsive Design */
+@media (max-width: 1024px) {
   .players-page {
-    position: absolute;
-    top: -50px;
-    left: 235px;
-    transform: translateX(-50%);
-    width: 1350px; /* More responsive */
-    /* max-width: 1200px; */
-    height: 600px;
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    color: aliceblue;
-    text-align: center;
-    padding: 20px;
+    width: 95%;
+    height: auto;
   }
-  
-  /* 📌 Search Bar */
-  .search-bar {
-    border: none;
-    border-radius: 30px;
-    width: 60%;
-    max-width: 500px;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    margin-top: -20px; /* Adjusted for better spacing */
-  }
-  
-  /* 📌 Close Button */
-  .close-btnPlayers {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    border: none;
-    background: none;
-    font-size: 20px;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .close-btnPlayers:hover {
-    color: red;
-  }
-  
-  /* 📌 Swiper Container */
+
   .swiper-container {
-    width: 100%;
-    max-width: 1100px;
-    height: 450px;
-    margin: 20px auto;
-    border-radius: 30px;
+    max-width: 100%;
   }
-  
-  /* 📌 Swiper Slide */
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* 📌 Slide Container */
+
   .swiper-slide .slide-container {
-    width: 300px;
-    /* max-width: 300px; */
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    color: white;
-    border-radius: 30px;
-    height: 380px;
-    overflow: hidden;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.1);
-    margin-top: -20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 300px;
+    max-width: 250px;
   }
-  
-  /* Hover effect on player cards */
-  .slide-container:hover, 
-  .slide-container:active {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Soft glow effect */
-    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .players-page {
+    width: 90%;
+    padding: 15px;
   }
-  
-  /* 📌 Slide Background */
-  .slide-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
+
+  .search-bar {
+    width: 80%;
   }
-  
-  /* 📌 Overlay */
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background-color: black;
-    opacity: 0.2;
-    transition: opacity 0.3s ease;
+
+  .slide-container {
+    height: 250px;
+    max-width: 220px;
   }
-  
-  .slide-container:hover .overlay {
-    opacity: 0.5;
+}
+
+@media (max-width: 480px) {
+  .players-page {
+    width: 95%;
+    padding: 10px;
   }
-  
-  /* 📌 Slide Content */
-  .slide-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 230px;
+
+  .search-bar {
+    width: 100%;
   }
-  
-  /* 📌 Arrow Icon */
-  .arrow-icon {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    width: 35px;
-    height: 35px;
-    color: white;
-    transition: transform 0.2s ease, color 0.2s ease;
+
+  .slide-container {
+    height: 200px;
+    max-width: 180px;
   }
-  
-  .slide-container:hover .arrow-icon {
-    color: #3b82f6;
-    transform: rotate(45deg);
-  }
-  
-  /* 📌 Responsive Design */
-  @media (max-width: 1024px) {
-    .players-page {
-      width: 95%;
-      height: auto;
-    }
-  
-    .swiper-container {
-      max-width: 100%;
-    }
-  
-    .swiper-slide .slide-container {
-      height: 300px;
-      max-width: 250px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .players-page {
-      width: 90%;
-      padding: 15px;
-    }
-  
-    .search-bar {
-      width: 80%;
-    }
-  
-    .slide-container {
-      height: 250px;
-      max-width: 220px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .players-page {
-      width: 95%;
-      padding: 10px;
-    }
-  
-    .search-bar {
-      width: 100%;
-    }
-  
-    .slide-container {
-      height: 200px;
-      max-width: 180px;
-    }
-  }
-  
+}

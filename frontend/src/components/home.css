@@ -1,69 +1,85 @@
+/* Reset and Global Styles */
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  }
-  
-  .main {
-    width: 100%;
-    position: relative;
-  }
-  
-  /* Video Section */
-  .video-section {
-    width: 100%;
-    height: 100vh; /* Cover the viewport */
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .player{
-    margin: 00px;
-    width: 200px;
-  }
-  video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-  }
-  h1 {
-    margin-left: 5px !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Image Section */
-  .image-section {
-    width: 100%;
-    height: 100vh; /* Cover the viewport */
-    position: relative;
-    background-color: black; /* Set background color to black */
-  }
-  
-  .background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 
+/* Main Wrapper */
+.main {
+  width: 100%;
+  height: 100vh; /* Fullscreen */
+  position: relative;
+  overflow: hidden;
+}
 
-  
+/* Video or Image Section */
+.video-section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.mn{
+  margin-left: -1000px;
+}
+
+/* Overlay (Dark Transparent Layer) */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 10) !important;
+  z-index: 2; /* Above the background */
+}
+
+/* Background Video */
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Behind the overlay */
+}
+
+/* Background Image (If No Video) */
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Behind the overlay */
+}
+
+/* Centered Content */
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  z-index: 3; /* Above overlay */
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  margin-right: -941px !important;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-right: 55px !important;
+
+}

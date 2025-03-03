@@ -40,6 +40,7 @@
 #AboutUs-button,
 #AddPlayer-button,
 #Logout-button,
+#PlayerStatus-button,
 #Players-button {
   font-family: 'Roboto';
   font-weight: bold;
@@ -60,6 +61,7 @@
 #AboutUs-button:hover,
 #AddPlayer-button:hover,
 #Logout-button:hover,
+#PlayerStatus-button:hover,
 #Players-button:hover {
   color: #FF4500; /* Change text color on hover */
 }
@@ -70,6 +72,7 @@
 #AboutUs-button::after,
 #AddPlayer-button::after,
 #Logout-button::after,
+#PlayerStatus-button::after,
 #Players-button::after {
   content: '';
   display: block;
@@ -86,6 +89,7 @@
 #AboutUs-button:hover::after,
 #AddPlayer-button:hover::after,
 #Logout-button:hover::after,
+#PlayerStatus-button:hover::after,
 #Players-button:hover::after {
   width: 100%; /* Expand underline on hover */
 }
@@ -96,6 +100,7 @@
 #AboutUs-button.active::after,
 #AddPlayer-button.active::after,
 #Logout-button.active::after,
+#PlayerStatus-button.active::after,
 #Players-button.active::after {
   width: 100%; /* Show underline for the active page */
 }
@@ -112,23 +117,27 @@
 } */
 
 #Home-button {
-  right: 640px;
+  right: 825px;
   top: 20px;
 }
-
-#Players-button {
-  right: 500px;
-  top: 20px;
-}
-
 #AddPlayer-button {
-  right: 330px;
+  right: 530px;
+  top: 20px;
+}
+#Players-button {
+  right: 690px;
+  top: 20px;
+}
+
+
+#PlayerStatus-button {
+  right: 320px;
   top: 20px;
 }
 
 
 #AboutUs-button {
-  right: 180px;
+  right: 170px;
   top: 20px;
 }
 

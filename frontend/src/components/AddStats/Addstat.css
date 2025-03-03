@@ -1,0 +1,134 @@
+
+  /* .add-player_container{
+    position: absolute;
+    top: -100px;
+    left: 188px;
+    transform: translateX(-50%);
+    width: 1350px; /* Ensures content fits well */
+    /* max-width: 1000px; */
+    /* height: 600px;
+    margin: 50px;
+    padding: 0;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: aliceblue;
+    text-align: center; */
+
+  /* }  */
+  /* .add-stats-modal {
+    position: absolute;
+    top: -100px;
+    left: 188px;
+    transform: translateX(-50%);
+    /* width: 1350px; 
+    width: 800px !important;
+    height: 630px !important;
+    margin: 50px;
+    padding: 20px;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: aliceblue;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+} */
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: aliceblue;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.uh {
+    margin-left: -950px;
+}
+.add-stats-modal {
+    position: absolute;
+    top: -100px;
+    left: 188px;
+    transform: translateX(-50%);
+    width: 800px !important;
+    height: 630px !important;
+    margin: 50px;
+    padding: 20px;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: aliceblue;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.add-stats-modal form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-stats-modal label {
+    font-size: 17.5px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.add-stats-modal select,
+.add-stats-modal input[type="number"] {
+    width: 500px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgb(42, 28, 28);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.add-stats-modal select:hover,
+.add-stats-modal input[type="number"]:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.add-stats-modal select:focus,
+.add-stats-modal input[type="number"]:focus {
+    border-color: #00ff88;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.add-stats-modal button[type="submit"] {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00ff88, #00b8ff);
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add-stats-modal button[type="submit"]:hover {
+    background: linear-gradient(135deg, #00b8ff, #00ff88);
+    transform: scale(1.05);
+}
+
+.add-stats-modal button[type="submit"]:active {
+    transform: scale(0.95);
+}

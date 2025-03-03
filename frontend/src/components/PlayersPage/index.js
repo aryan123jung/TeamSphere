@@ -65,16 +65,16 @@ import {
 // import Player1 from "../../assets/cardPicture/Player1.jpeg";
 // import Player2 from "../../assets/cardPicture/Player2.jpeg";
 // import Player3 from "../../assets/cardPicture/Player3.jpeg";
-  import Player1 from "../../assets/cardPicture/SpaceCity1.jpeg";
-  import Player2 from "../../assets/cardPicture/SpaceCity5.jpeg";
-  import Player3 from "../../assets/cardPicture/SpaceCity6.jpeg";
-  import Player4 from "../../assets/cardPicture/SpaceCity7.jpeg";
-  import Player5 from "../../assets/cardPicture/SpaceCity8.jpeg";
-  import Player6 from "../../assets/cardPicture/SpaceCity9.jpeg";
+  import Player1 from "../../assets/cardPicture/jones.jpeg";
+  import Player2 from "../../assets/cardPicture/Michael.webp";
+  import Player3 from "../../assets/cardPicture/warner.png";
+  import Player4 from "../../assets/cardPicture/virat.png";
+  import Player5 from "../../assets/cardPicture/Rohit.webp";
+  import Player6 from "../../assets/cardPicture/subhman.png";
 
 export const ServiceData = [
   {
-    name: "John Doe",
+    name: "Aaron Jones",
     id: "P001",
     age: 25,
     nationality: "USA",
@@ -119,26 +119,26 @@ export const ServiceData = [
     },
   },
   {
-    name: "Michael Smith",
+    name: "Virat Kohli",
     id: "P002",
     age: 28,
     nationality: "Australia",
-    category: "Bowler",
+    category: "Batsman",
     photo: Player4,
     stats: {
-      batting: 5,
-      bowling: 9,
-      fielding: 6,
-      fitness: 7,
-      matchAwareness: 7,
+      batting: 100,
+      bowling: 80,
+      fielding: 90,
+      fitness: 100,
+      matchAwareness: 95,
     },
   },
   {
-    name: "Michael Smith",
+    name: "Rohit Sharma",
     id: "P002",
     age: 28,
-    nationality: "Australia",
-    category: "Bowler",
+    nationality: "India",
+    category: "Batsman",
     photo: Player5,
     stats: {
       batting: 5,
@@ -149,11 +149,11 @@ export const ServiceData = [
     },
   },
   {
-    name: "Michael Smith",
+    name: "Subhman Gill",
     id: "P002",
     age: 28,
-    nationality: "Australia",
-    category: "Bowler",
+    nationality: "India",
+    category: "Batsman",
     photo: Player6,
     stats: {
       batting: 5,
